@@ -6,7 +6,6 @@ const API_KEY = "718eb1618a654e149df155611223108";
 export default class weatherApi {
   constructor() {
     this.client = axios.create({
-      baseUrl: "http://api.weatherapi.com/v1",
       params: {
         key: API_KEY,
       },
@@ -45,8 +44,21 @@ export default class weatherApi {
       throw error;
     }
   }
+
+  async getFutureWeather(city, date) {
+    try {
+      const futureWeather = await this.client.get(
+        "http://api.weatherapi.com/v1/future.json",
+        {
+          params: {
+            q: city,
+            dt: date,
+          },
+        }
+      );
+      return futureWeather.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
-
-// const weatherApi = new WeatherApi(BASE_URL);
-
-// export const weatherTodayResponse = weatherApi.getWetherToday();
