@@ -1,6 +1,8 @@
+import styles from "./home.module.css";
+
 export default function Home() {
   return (
-    <div>
+    <div className={styles.home}>
       <p>React Weather</p>
     </div>
   );

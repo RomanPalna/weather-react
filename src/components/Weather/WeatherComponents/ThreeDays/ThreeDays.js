@@ -10,7 +10,9 @@ export default function ThreeDays() {
   async function getForecast() {
     const apiWeather = new weatherApi();
 
-    const forecast = await apiWeather.getForecastThreeDays(city);
+    const forecast = await apiWeather.getForecastThreeDays(
+      city ? city : "Kamelnitskiy"
+    );
 
     setForecast(forecast);
   }

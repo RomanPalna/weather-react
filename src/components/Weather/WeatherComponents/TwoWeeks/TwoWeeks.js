@@ -11,7 +11,9 @@ export default function TwoWeeks() {
     // const date = addDaysToCurrentDate(14); //yyyy-MM-dd
 
     const apiWeather = new weatherApi();
-    const futureWeather = await apiWeather.getFutureWeather(city);
+    const futureWeather = await apiWeather.getFutureWeather(
+      city ? city : "Kamelnitskiy"
+    );
     setWeather(futureWeather);
   }
 
