@@ -1,22 +1,42 @@
 .today {
     max-width: 1200px;
     width: 100%;
+    padding: 20px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
 }
 
 .cityInfo {
-   text-decoration: none;
-   list-style: none;
-   color: aqua;
-   margin: 10px 0;
-   padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: rgb(5, 7, 2);
+    margin: 10px 0;
+    padding: 0;
+    max-width: 250px;
 }
 
 .updated {
-    color: aqua
+    color: rgb(5, 7, 2);
+    margin: 0;
+}
 
+@media screen and (max-width: 768px) {
+    .today {
+        display: block;
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .cityInfo {
+        margin: 10px auto;
+        width: 200px
+    }
+
+    .img {
+        display: block;
+        margin: 10px auto 0;
+    }
 }

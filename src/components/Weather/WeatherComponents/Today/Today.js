@@ -38,7 +38,11 @@ export default function Today() {
           </ul>
 
           <div>
-            <img src={weatherToday.current.condition.icon} alt="icon" />
+            <img
+              className={styles.img}
+              src={weatherToday.current.condition.icon}
+              alt="icon"
+            />
             <ul className={styles.cityInfo}>
               <li>Condition: {weatherToday.current.condition.text}</li>
               <li>Tmperature: {weatherToday.current.temp_c}°C</li>
