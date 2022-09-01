@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import weatherApi from "../../../../api/weatherApi";
 import Markup from "../../../Markup/Markup";
+import Loader from "../../../Loader/Loader";
 
 export default function ThreeDays() {
   const [forecast, setForecast] = useState();
@@ -30,7 +31,7 @@ export default function ThreeDays() {
           <Markup key={day.date} forecast={day} location={forecast.location} />
         ))
       ) : (
-        <div>Loading...</div>
+        <Loader />
       )}
     </>
   );

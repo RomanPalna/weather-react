@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import weatherApi from "../../../../api/weatherApi";
+import Loader from "../../../Loader/Loader";
 import styles from "./today.module.css";
 
 export default function Today() {
@@ -46,7 +47,7 @@ export default function Today() {
           </div>
         </div>
       ) : (
-        <div>Loading...</div>
+        <Loader />
       )}
     </>
   );

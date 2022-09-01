@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import weatherApi from "../../../../api/weatherApi";
+import Loader from "../../../Loader/Loader";
 import Markup from "../../../Markup/Markup";
 
 export default function TwoWeeks() {
@@ -30,7 +31,7 @@ export default function TwoWeeks() {
           <Markup key={day.date} forecast={day} location={weather.location} />
         ))
       ) : (
-        <div>Loading...</div>
+        <Loader />
       )}
     </>
   );
