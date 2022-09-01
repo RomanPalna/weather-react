@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import weatherApi from "../../../../api/weatherApi";
+import Markup from "../../../Markup/Markup";
 
 export default function TwoWeeks() {
   const [weather, setWeather] = useState();
@@ -8,8 +9,6 @@ export default function TwoWeeks() {
   const city = useSelector((state) => state.cities.value);
 
   async function futureWeather() {
-    // const date = addDaysToCurrentDate(14); //yyyy-MM-dd
-
     const apiWeather = new weatherApi();
     const futureWeather = await apiWeather.getFutureWeather(
       city ? city : "Kamelnitskiy"
@@ -24,5 +23,15 @@ export default function TwoWeeks() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
-  return <div>Two Weeks</div>;
+  return (
+    <>
+      {weather ? (
+        weather.forecast.forecastday.map((day) => (
+          <Markup key={day.date} forecast={day} location={weather.location} />
+        ))
+      ) : (
+        <div>Loading...</div>
+      )}
+    </>
+  );
 }

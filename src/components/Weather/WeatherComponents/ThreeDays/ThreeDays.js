@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import weatherApi from "../../../../api/weatherApi";
+import Markup from "../../../Markup/Markup";
 
 export default function ThreeDays() {
   const [forecast, setForecast] = useState();
@@ -17,12 +18,20 @@ export default function ThreeDays() {
     setForecast(forecast);
   }
 
-  console.log(forecast);
-
   useEffect(() => {
     getForecast();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
-  return <div>Threee Days</div>;
+  return (
+    <>
+      {forecast ? (
+        forecast.forecast.forecastday.map((day) => (
+          <Markup key={day.date} forecast={day} location={forecast.location} />
+        ))
+      ) : (
+        <div>Loading...</div>
+      )}
+    </>
+  );
 }

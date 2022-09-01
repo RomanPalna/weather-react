@@ -22,7 +22,6 @@ export default function Today() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
-  console.log(weatherToday ? weatherToday : "Error");
   return (
     <>
       {weatherToday ? (

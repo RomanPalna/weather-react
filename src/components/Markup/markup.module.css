@@ -1,0 +1,23 @@
+.today {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.cityInfo {
+    text-decoration: none;
+    list-style: none;
+    color: rgb(5, 7, 2);
+    margin: 10px 0;
+    padding: 0;
+    width: 250px;
+}
+
+.updated {
+    color: rgb(5, 7, 2);
+    margin: 0 ;
+}
