@@ -31,7 +31,7 @@ export default class weatherApi {
   async getForecastThreeDays(city) {
     try {
       const forecast = await this.client.get(
-        "http://api.weatherapi.com/v1/current.json",
+        "http://api.weatherapi.com/v1/forecast.json",
         {
           params: {
             q: city,
@@ -45,36 +45,36 @@ export default class weatherApi {
     }
   }
 
-  async getFutureWeather(city, date) {
+  async getFutureWeather(city) {
     try {
-      const futureWeather = await this.client.get(
-        "http://api.weatherapi.com/v1/future.json",
+      const forecast = await this.client.get(
+        "http://api.weatherapi.com/v1/forecast.json",
         {
           params: {
             q: city,
-            dt: date,
+            days: 14,
           },
         }
       );
-      return futureWeather.data;
+      return forecast.data;
     } catch (error) {
       throw error;
     }
   }
 
-  async getCities(value) {
-    try {
-      const cities = await this.client.get(
-        "http://api.weatherapi.com/v1/search.json",
-        {
-          params: {
-            q: value,
-          },
-        }
-      );
-      return cities.data;
-    } catch (error) {
-      throw error;
-    }
-  }
+  // async getCities(value) {
+  //   try {
+  //     const cities = await this.client.get(
+  //       "http://api.weatherapi.com/v1/search.json",
+  //       {
+  //         params: {
+  //           q: value,
+  //         },
+  //       }
+  //     );
+  //     return cities.data;
+  //   } catch (error) {
+  //     throw error;
+  //   }
+  // }
 }
