@@ -19,7 +19,7 @@ export default function SearchInput() {
   return (
     <form className={styles.search}>
       <input
-        placeholder="Виберіть місто"
+        placeholder="Write city..."
         className={styles.input}
         type="text"
         value={search}

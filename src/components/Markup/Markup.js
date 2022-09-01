@@ -16,7 +16,11 @@ export default function Markup({ forecast, location }) {
       </ul>
 
       <div>
-        <img src={forecast.day.condition.icon} alt="icon" />
+        <img
+          className={styles.img}
+          src={forecast.day.condition.icon}
+          alt="icon"
+        />
         <ul className={styles.cityInfo}>
           <li>Condition: {forecast.day.condition.text}</li>
           <li>Temperature max: {forecast.day.maxtemp_c}°C</li>

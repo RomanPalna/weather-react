@@ -15,7 +15,7 @@ export default class weatherApi {
   async getWetherToday(city) {
     try {
       const getWeather = await this.client.get(
-        "http://api.weatherapi.com/v1/current.json",
+        "https://api.weatherapi.com/v1/current.json",
         {
           params: {
             q: city,
@@ -31,7 +31,7 @@ export default class weatherApi {
   async getForecastThreeDays(city) {
     try {
       const forecast = await this.client.get(
-        "http://api.weatherapi.com/v1/forecast.json",
+        "https://api.weatherapi.com/v1/forecast.json",
         {
           params: {
             q: city,
@@ -48,7 +48,7 @@ export default class weatherApi {
   async getFutureWeather(city) {
     try {
       const forecast = await this.client.get(
-        "http://api.weatherapi.com/v1/forecast.json",
+        "https://api.weatherapi.com/v1/forecast.json",
         {
           params: {
             q: city,

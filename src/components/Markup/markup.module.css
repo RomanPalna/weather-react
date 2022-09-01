@@ -1,6 +1,7 @@
 .today {
     max-width: 1200px;
     width: 100%;
+    padding: 20px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -14,10 +15,26 @@
     color: rgb(5, 7, 2);
     margin: 10px 0;
     padding: 0;
-    width: 250px;
+    max-width: 250px;
 }
 
 .updated {
     color: rgb(5, 7, 2);
     margin: 0 ;
+}
+
+@media screen and (max-width: 768px) {
+    .today {
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+    }
+    .cityInfo {
+        margin: 10px auto;
+        width: 200px
+    }
+    .img {
+        display: block;
+        margin: 10px auto 0;
+    }
 }

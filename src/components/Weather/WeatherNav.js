@@ -13,7 +13,7 @@ export default function Weather() {
           }
           to="today"
         >
-          Погода сьогодні
+          Weather now
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -21,7 +21,7 @@ export default function Weather() {
           }
           to="three-days"
         >
-          Погода на три дні
+          Weather for 3 days
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -29,7 +29,7 @@ export default function Weather() {
           }
           to="two-weeks"
         >
-          Погода на 14 днів
+          Weather for 2 weeks
         </NavLink>
       </div>
     </div>
