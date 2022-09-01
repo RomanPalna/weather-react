@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./Search.module.css";
+import { getValue } from "../../../../redux/city-action";
 
 export default function SearchInput() {
   const [search, setSearch] = useState("");
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getValue(search));
+  }, [dispatch, search]);
 
   const handleChange = (e) => {
     setSearch(e.currentTarget.value);
   };
 
   return (
-    <div className={styles.search}>
+    <form className={styles.search}>
       <input
         placeholder="Виберіть місто"
         className={styles.input}
@@ -18,6 +26,6 @@ export default function SearchInput() {
         name="search"
         onChange={handleChange}
       />
-    </div>
+    </form>
   );
 }

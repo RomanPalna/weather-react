@@ -61,4 +61,20 @@ export default class weatherApi {
       throw error;
     }
   }
+
+  async getCities(value) {
+    try {
+      const cities = await this.client.get(
+        "http://api.weatherapi.com/v1/search.json",
+        {
+          params: {
+            q: value,
+          },
+        }
+      );
+      return cities.data;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
